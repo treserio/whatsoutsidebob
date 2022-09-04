@@ -1,5 +1,7 @@
 # What's Outside Bob?
 
+![Whatsoutsidebob](https://github.com/ronroeandassociates/assets/blob/master/images/whatsupbob_banner.png?raw=true)
+
 a little about the project
 
 ## Getting Started
