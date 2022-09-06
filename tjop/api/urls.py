@@ -8,7 +8,7 @@ from rest_framework.authtoken.views import obtain_auth_token
 app_name = 'api'
 
 urlpatterns = [
-    path("login/", obtain_auth_token, name="bob_shit_on_me"),
+    path("login/", obtain_auth_token),
     path('hex_values/', views.hex_values.as_view()),
     path('pic_info/', views.pic_info.as_view()),
     path('colors/', views.colors.as_view()),

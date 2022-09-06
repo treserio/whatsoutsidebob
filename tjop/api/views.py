@@ -1,27 +1,13 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, permissions, views
 from rest_framework.generics import ListAPIView
-from rest_framework import filters
-from rest_framework import permissions
-from rest_framework import views
-from rest_framework.response import Response, Token
-
-
+from rest_framework.response import Response
+from rest_framework.authtoken.models import Token
 
 
 from .models import Colors, HexValues, PicInfo, Subjects
-from .serializers import ColorsSeri, HexValuesSeri, JoinTableSeri, PicInfoSeri, SubjectsSeri, LoginSerializer
-
-class LoginView(views.APIView):
-    permission_classes = (permissions.AllowAny,)
-
-    def post(self, request):
-        serializer = LoginSerializer(data=request.data,
-            context={'request': self.request})
-        serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data['user']
-        token, created = Token.objects.get_or_create(user=user)
-        return Response({'token': token.key})
+from .serializers import ColorsSeri, HexValuesSeri, JoinTableSeri, PicInfoSeri, SubjectsSeri
 
 
 class colors(ListAPIView):
