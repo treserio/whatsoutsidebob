@@ -1,12 +1,29 @@
+from wsgiref import validate
 from django.shortcuts import render
 from django.http import HttpResponse
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.generics import ListAPIView
 from rest_framework import filters
+from rest_framework import permissions
+from rest_framework import views
+from rest_framework.response import Response
+
+
 
 
 from .models import Colors, HexValues, PicInfo, Subjects
-from .serializers import ColorsSeri, HexValuesSeri, JoinTableSeri, PicInfoSeri, SubjectsSeri
+from .serializers import ColorsSeri, HexValuesSeri, JoinTableSeri, PicInfoSeri, SubjectsSeri, LoginSerializer
+
+class LoginView(views.APIView):
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request):
+        serializer = LoginSerializer(data=request.data,
+            context={'request': self.request})
+        serializer.is_valid(raise_exception=True)
+        user = serializer.validated_data['user']
+        login(request, user)
+        return Response({'success': True})
 
 class colors(ListAPIView):
     queryset = Colors.objects.all()
