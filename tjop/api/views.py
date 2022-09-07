@@ -1,4 +1,6 @@
 # from django.shortcuts import render
+from django.views import View
+from django.http import HttpResponse
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, permissions, views
 from rest_framework.generics import ListAPIView
@@ -321,3 +323,15 @@ class subj_view(ListAPIView):
     search_fields = [
         'episode'
     ]
+
+class logout(ListAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
+    def get(self, req):
+        return self.logout(req)
+
+    def logout(self, req):
+        try:
+            Token.objects.get(**{'key':req.META['HTTP_AUTHORIZATION'].split(' ')[1]}).delete()
+            return HttpResponse('Token has been removed')
+        except Exception:
+            return HttpResponse("Invalid Token, please try again")
