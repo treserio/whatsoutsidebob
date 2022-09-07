@@ -11,6 +11,8 @@ from .serializers import ColorsSeri, HexValuesSeri, JoinTableSeri, PicInfoSeri, 
 
 
 class colors(ListAPIView):
+    ordering = ['episode']
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = Colors.objects.all()
     serializer_class = ColorsSeri
     filter_backends = [
@@ -47,6 +49,8 @@ class colors(ListAPIView):
     ]
 
 class hex_values(ListAPIView):
+    ordering = ['index']
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = HexValues.objects.all()
     serializer_class = HexValuesSeri
     filter_backends = [
@@ -68,6 +72,8 @@ class hex_values(ListAPIView):
     ]
 
 class join_table(ListAPIView):
+    ordering = ['episode_colors__episode']
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = PicInfo.objects.all()
     serializer_class = JoinTableSeri
     filter_backends = [
@@ -192,6 +198,8 @@ class join_table(ListAPIView):
     ]
 
 class pic_info(ListAPIView):
+    ordering = ['episode_colors__episode']
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = PicInfo.objects.all()
     serializer_class = PicInfoSeri
     filter_backends = [
@@ -228,6 +236,8 @@ class pic_info(ListAPIView):
     ]
 
 class subj_view(ListAPIView):
+    ordering = ['episode']
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = Subjects.objects.all()
     serializer_class = SubjectsSeri
     filter_backends = [

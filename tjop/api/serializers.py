@@ -7,6 +7,7 @@ from .models import HexValues
 class ColorsSeri(serializers.ModelSerializer):
     class Meta:
         model = models.Colors
+        ordering = ['episode']
         fields = [
             'episode',
             'alizarin_crimson',
