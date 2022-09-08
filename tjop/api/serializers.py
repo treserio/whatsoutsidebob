@@ -1,11 +1,13 @@
 from rest_framework import serializers
 from . import models
-
+from django.contrib.auth import authenticate
 from .models import HexValues
+
 
 class ColorsSeri(serializers.ModelSerializer):
     class Meta:
         model = models.Colors
+        ordering = ['episode']
         fields = [
             'episode',
             'alizarin_crimson',

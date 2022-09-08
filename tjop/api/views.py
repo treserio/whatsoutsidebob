@@ -1,14 +1,20 @@
-from django.shortcuts import render
+# from django.shortcuts import render
+from django.views import View
 from django.http import HttpResponse
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, permissions, views
 from rest_framework.generics import ListAPIView
-from rest_framework import filters
+from rest_framework.response import Response
+from rest_framework.authtoken.models import Token
 
 
 from .models import Colors, HexValues, PicInfo, Subjects
 from .serializers import ColorsSeri, HexValuesSeri, JoinTableSeri, PicInfoSeri, SubjectsSeri
 
+
 class colors(ListAPIView):
+    ordering = ['episode']
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = Colors.objects.all()
     serializer_class = ColorsSeri
     filter_backends = [
@@ -45,6 +51,8 @@ class colors(ListAPIView):
     ]
 
 class hex_values(ListAPIView):
+    ordering = ['index']
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = HexValues.objects.all()
     serializer_class = HexValuesSeri
     filter_backends = [
@@ -66,6 +74,8 @@ class hex_values(ListAPIView):
     ]
 
 class join_table(ListAPIView):
+    ordering = ['episode_colors__episode']
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = PicInfo.objects.all()
     serializer_class = JoinTableSeri
     filter_backends = [
@@ -190,6 +200,8 @@ class join_table(ListAPIView):
     ]
 
 class pic_info(ListAPIView):
+    ordering = ['episode_colors__episode']
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = PicInfo.objects.all()
     serializer_class = PicInfoSeri
     filter_backends = [
@@ -226,6 +238,8 @@ class pic_info(ListAPIView):
     ]
 
 class subj_view(ListAPIView):
+    ordering = ['episode']
+    permission_classes = (permissions.IsAuthenticated,)
     queryset = Subjects.objects.all()
     serializer_class = SubjectsSeri
     filter_backends = [
@@ -309,3 +323,15 @@ class subj_view(ListAPIView):
     search_fields = [
         'episode'
     ]
+
+class logout(ListAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
+    def get(self, req):
+        return self.logout(req)
+
+    def logout(self, req):
+        try:
+            Token.objects.get(**{'key':req.META['HTTP_AUTHORIZATION'].split(' ')[1]}).delete()
+            return HttpResponse('Token has been removed')
+        except Exception:
+            return HttpResponse("Invalid Token, please try again")
