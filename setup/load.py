@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 # Prep for running load.py
 # bob_ross database must be setup first
 # index needs to be added as the column name to the first field in 'TJOP - Colors Used'
-engine = create_engine('mysql://root@localhost:3306/bob_ross')
+engine = create_engine('mysql://root:root@localhost:3306/bob_ross')
 
 colors_used = pd.read_csv('./TJOP - Colors Used')
 subject_matter = pd.read_csv('./TJOP - Subject Matter')
@@ -38,7 +38,8 @@ subject_matter.to_sql('subjects', con=engine, if_exists='replace')
 ###
 #   create the pic_info table by filtering and adding various column data with pandas dataframes
 ###
-episodeDates = [re.findall(r'[\w\s]\(([\d\w,\s]+)\)[$ ]?', line)[0] for line in open('TJOP - Episode Dates')]
+episodeDates = [re.findall(r'[\w\s]\(([\d\w,\s]+)\)[$ ]?', line)[0]
+                for line in open('TJOP - Episode Dates')]
 date_objects = [datetime.strptime(date, '%B %d, %Y') for date in episodeDates]
 # print(date_objects)
 date_DF = pd.DataFrame()
@@ -81,9 +82,11 @@ main_import.to_sql('pic_info', con=engine, if_exists='replace')
 ###
 #   Create the colors table from the dataframes
 ###
-colors_drop_list = ['index', 'painting_index', 'img_src', 'painting_title', 'season', 'episode', 'num_colors', 'youtube_src', 'colors', 'color_hex']
+colors_drop_list = ['index', 'painting_index', 'img_src', 'painting_title',
+                    'season', 'episode', 'num_colors', 'youtube_src', 'colors', 'color_hex']
 # concate the episode_DF with the dataframe of dropped columns from colors_used
-colors_import = pd.concat([episode_DF, colors_used.drop(colors_drop_list, axis=1)], axis=1)
+colors_import = pd.concat(
+    [episode_DF, colors_used.drop(colors_drop_list, axis=1)], axis=1)
 # print(colors_import.columns)
 # create our table using to_sql
 colors_import.to_sql('colors', con=engine, if_exists='replace')
@@ -96,10 +99,14 @@ hex_DF = colors_used[['colors', 'color_hex']]
 # setup key value pairs based on string input from rows of hex_DF, all col values of hex_DF start as strings
 hex_colors = {}
 for k, v in hex_DF.iterrows():
-    color_list = v.colors[1:-1].replace("'", '').replace('\\r', '').replace('\\n', '').split(', ')
-    hex_list = v.color_hex[1:-1].replace("'", '').replace('\\r', '').replace('\\n', '').split(', ')
-    hex_colors.update({color_list[i]:hex_list[i] for i in range(len(color_list))})
-hex_import = pd.DataFrame({'color': hex_colors.keys(), 'hex': hex_colors.values()})
+    color_list = v.colors[1:-1].replace("'", '').replace(
+        '\\r', '').replace('\\n', '').split(', ')
+    hex_list = v.color_hex[1:-1].replace("'", '').replace(
+        '\\r', '').replace('\\n', '').split(', ')
+    hex_colors.update({color_list[i]: hex_list[i]
+                      for i in range(len(color_list))})
+hex_import = pd.DataFrame(
+    {'color': hex_colors.keys(), 'hex': hex_colors.values()})
 hex_import.to_sql('hex_values', con=engine, if_exists='replace')
 
 ###
@@ -113,4 +120,3 @@ hex_import.to_sql('hex_values', con=engine, if_exists='replace')
 # print('\nreturn_colors\n', return_colors)
 # # close our sql connection
 # conn.close()
-
