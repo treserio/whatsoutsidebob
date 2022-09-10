@@ -1,49 +1,105 @@
-# What's Outside Bob?
-
 ![Whatsoutsidebob](https://github.com/ronroeandassociates/assets/blob/master/images/whatsupbob_banner.png?raw=true)
 
-After finishing an API for the Joy of Painting we decided to make a simple app to show off the API. The app is called "What's Outside Bob?" It is tied to areas of Tulsa and matches pictures from the Joy of Painting to scene around the Tulsa Area.
+<h1 align="center">Welcome to What's Outside Bob? 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.9-blue.svg?cacheSeconds=2592000" />
+  <a href="TODO" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="TODO" target="_blank">
+    <img alt="License: TODO" src="https://img.shields.io/badge/License-TODO-yellow.svg" />
+  </a>
+  <a href="https://twitter.com/TODO" target="_blank">
+    <img alt="Twitter: TODO" src="https://img.shields.io/twitter/follow/TODO.svg?style=social" />
+  </a>
+</p>
 
-## Getting Started
+### 🏠 [Homepage](After finishing an API for the Joy of Painting we decided to make a simple app to show off the API. The app is called &#34;What's Outside Bob?&#34; It is tied to areas of Tulsa and matches pictures from the Joy of Painting to scene around the Tulsa Area)
 
-TODO how do we get started?
+### ✨ [Demo](TODO)
 
-### Prerequisites
+## Install
 
-TODO what are the requirements
+```sh
+TODO
+```
 
-### Installing
+## Usage
 
-TODO how do we install
+```sh
+TODO
+```
 
-## Running the tests
+## Run tests
 
-TODO how do we run the tests
+```sh
+TODO
+```
 
-### Break down into end to end tests
+## Authors
 
-TODO best way to test
+👤 **Nicki Jo Ford**
 
-### And coding style tests
+- Website: TODO
+- Twitter: [@TODO](https://twitter.com/TODO)
+- Github: [@TODO](https://github.com/TODO)
+- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
 
-TODO how is the style
+👤 **Rocko Gilbert**
 
-## Deployment
+- Website: TODO
+- Twitter: [@TODO](https://twitter.com/TODO)
+- Github: [@TRockoGilbert](https://github.com/RockoGilbert)
+- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
 
-TODO best way to deploy
+👤 **Isaac Green**
 
-## Built With
+- Website: TODO
+- Twitter: [@TODO](https://twitter.com/TODO)
+- Github: [@IsaacGreenMachine](https://github.com/IsaacGreenMachine)
+- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
 
-TODO what did we build it with
+👤 **Ron Olsen**
 
-## Contributors
+- Website: TODO
+- Twitter: [@TODO](https://twitter.com/TODO)
+- Github: [@ronroeandassociates](https://github.com/ronroeandassociates)
+- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
 
-TODO review this section and update Nicki's info for GitHub
+👤 **Lyndon Pettersson**
 
-- [Nicki Jo Ford](https://github.com/nickiford) - _Initial work_ - [What's Outside Bob?]
-- [Rocko Gilbert](https://github.com/RockoGilbert) - _Initial work_ - [What's Outside Bob?]
-- [Isaac Green](https://github.com/IsaacGreenMachine) - _Initial work_ - [What's Outside Bob?]
-- [Ron Olsen](https://github.com/ronroeandassociates) - _Initial work_ - [What's Outside Bob?]
-- [Lyndon Pettersson](https://github.com/Lyndonpett) - _Initial work_ - [What's Outside Bob?]
-- [Tres Serio](https://github.com/tresserio) - _Initial work_ - [What's Outside Bob?]
-- [Toffer Sokolosky](https://github.com/Estoric918) - _Initial work_ - [What's Outside Bob?]
+- Website: TODO
+- Twitter: [@TODO](https://twitter.com/TODO)
+- Github: [@Lyndonpett](https://github.com/Lyndonpett)
+- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
+
+👤 **Tres Serio**
+
+- Website: TODO
+- Twitter: [@TODO](https://twitter.com/TODO)
+- Github: [@tresserio](https://github.com/tresserio)
+- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
+
+👤 **Toffer Sokolosky**
+
+- Website: TODO
+- Twitter: [@TODO](https://twitter.com/TODO)
+- Github: [@Estoric918](https://github.com/Estoric918)
+- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](TODO). You can also take a look at the [contributing guide](TODO).
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+## 📝 License
+
+Copyright © 2022 [TODO](https://github.com/TODO).<br />
+This project is [TODO](TODO) licensed.
+
+---
+
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
