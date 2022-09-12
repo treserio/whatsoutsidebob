@@ -5,6 +5,7 @@ pip install django
 pip install django-cors-headers
 pip install django-filter
 pip install djangorestframework
+pip install pandas
 
 echo "CREATE DATABASE IF NOT EXISTS bob_ross;" | mysql -uroot -proot
 
