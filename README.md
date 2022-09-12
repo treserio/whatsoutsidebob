@@ -1,27 +1,35 @@
-![Whatsoutsidebob](https://github.com/ronroeandassociates/assets/blob/master/images/whatsupbob_banner.png?raw=true)
-
 <h1 align="center">Welcome to What's Outside Bob? 👋</h1>
-<p>
+<p align="center">
+<img src="https://github.com/ronroeandassociates/assets/blob/master/images/whatsupbob_banner.png?raw=true" align="center" width="60%" height="60%" alt="Whatsoutsidebob Banner" />
+</p>
+
+<p align="center">
   <img alt="Version" src="https://img.shields.io/badge/version-1.9-blue.svg?cacheSeconds=2592000" />
   <a href="TODO" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href="TODO" target="_blank">
-    <img alt="License: TODO" src="https://img.shields.io/badge/License-TODO-yellow.svg" />
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://twitter.com/TODO" target="_blank">
-    <img alt="Twitter: TODO" src="https://img.shields.io/twitter/follow/TODO.svg?style=social" />
-  </a>
+  <!a href="https://twitter.com/TODO" target="_blank">
+    <!img alt="Twitter: TODO" src="https://img.shields.io/twitter/follow/TODO.svg?style=social" />
+  </!a>
 </p>
 
-### 🏠 [Homepage](After finishing an API for the Joy of Painting we decided to make a simple app to show off the API. The app is called &#34;What's Outside Bob?&#34; It is tied to areas of Tulsa and matches pictures from the Joy of Painting to scene around the Tulsa Area)
+### 🏠
+
+After finishing an API for the Joy of Painting we decided to make a simple app to show off the API. The app is called &#34;What's Outside Bob?&#34; It is tied to areas of Tulsa and matches pictures from the Joy of Painting to scene around the Tulsa Area
 
 ### ✨ [Demo](TODO)
+
+<p align="center"><img alt="frontpage" src="https://github.com/ronroeandassociates/assets/blob/master/images/2022-09-12%2010_15_19-WOB.png?raw=true" width="60%" height="60%" /></p>
 
 ## Install
 
 ```sh
-TODO
+clone the repository
+cd into the directory
+npm install
 ```
 
 ## Usage
@@ -61,10 +69,10 @@ TODO
 
 👤 **Ron Olsen**
 
-- Website: TODO
-- Twitter: [@TODO](https://twitter.com/TODO)
+- Website: [ronolsen.us](https://ronolsen.us)
+- Twitter: [@wlroe](https://twitter.com/wlroe)
 - Github: [@ronroeandassociates](https://github.com/ronroeandassociates)
-- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
+- LinkedIn: [@ronolsen](https://linkedin.com/in/ronolsen)
 
 👤 **Lyndon Pettersson**
 
