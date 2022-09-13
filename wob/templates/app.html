@@ -9,8 +9,12 @@
     <script src="../scripts/app-redirect.js"></script>
     <title>What's Outside Bob?</title>
 </head>
-<body class="">
-
+<div class="flex justify-center items-center"  id="loader">
+    <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
+    <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<body class="" style="visibility:hidden;">
     <div class="flex items-center flex-col bg-cover bg-no-repeat bg-center" style="background-image: url(../images/wob-login-bg.png)">
     <form class="flex flex-col w-3/4 mt-8">
         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
