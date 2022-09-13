@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "declaration": true,
+      "module": "commonjs",
+      "outDir": "./scripts",
+      "strict": true,
+      "target": "es5",
+    },
+    "include": ["scripts"],
+    "exclude": ["node_modules", "**/__tests__/*"]
+  }
