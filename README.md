@@ -5,11 +5,11 @@
 
 <p align="center">
   <img alt="Version" src="https://img.shields.io/badge/version-1.9-blue.svg?cacheSeconds=2592000" />
-  <a href="TODO" target="_blank">
+  <a href " "  target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="TODO" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  <a href=" " target="_blank">
+    <img alt="License: none" src="https://img.shields.io/badge/License-none-yellow.svg" />
   </a>
   <!a href="https://twitter.com/TODO" target="_blank">
     <!img alt="Twitter: TODO" src="https://img.shields.io/twitter/follow/TODO.svg?style=social" />
@@ -26,19 +26,16 @@ After finishing an API for the Joy of Painting we decided to make a simple app t
 
 ## Install
 
-```sh
-clone the repository
-cd into the directory
-npm install
-```
+`- [clone the repository](https://github.com/treserio/whatsoutsidebob.git) `
+` - cd into the directory`
+`- npm install `
+`- [startDB.sh](../setup/startDB.sh) `
+
+## Requirements
+
+`. Django 3.2.5 . Python 3.9.6 . Node 14.17.6 . npm 6.14.15 . PostgreSQL 13.4 . Django Rest Framework .python . mysql`
 
 ## Usage
-
-```sh
-TODO
-```
-
-## Run tests
 
 ```sh
 TODO
@@ -81,18 +78,14 @@ TODO
 - Github: [@Estoric918](https://github.com/Estoric918)
 - LinkedIn: [@tofer-sokolosky](https://linkedin.com/in/tofer-sokolosky)
 
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](TODO). You can also take a look at the [contributing guide](TODO).
-
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2022 [TODO](https://github.com/TODO).<br />
-This project is [TODO](TODO) licensed.
+Copyright © 2022 [Cohort -15](https://github.com/treserio/whatsoutsidebob.git).<br />
+This project is [none](none) licensed.
 
 ---
 
