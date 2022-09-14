@@ -48,52 +48,38 @@ TODO
 
 👤 **Nicki Jo Ford**
 
-- Website: TODO
-- Twitter: [@TODO](https://twitter.com/TODO)
-- Github: [@TODO](https://github.com/TODO)
-- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
+- LinkedIn: [@nikkijoford](https://linkedin.com/in/nikkijoford)
 
 👤 **Rocko Gilbert**
 
-- Website: TODO
-- Twitter: [@TODO](https://twitter.com/TODO)
 - Github: [@TRockoGilbert](https://github.com/RockoGilbert)
-- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
+- LinkedIn: [@rocko2122](https://linkedin.com/in/rocko2122)
 
 👤 **Isaac Green**
 
-- Website: TODO
-- Twitter: [@TODO](https://twitter.com/TODO)
 - Github: [@IsaacGreenMachine](https://github.com/IsaacGreenMachine)
-- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
+- LinkedIn: [@-isaacgreen-](https://linkedin.com/in/-isaacgreen-)
 
 👤 **Ron Olsen**
 
 - Website: [ronolsen.us](https://ronolsen.us)
-- Twitter: [@wlroe](https://twitter.com/wlroe)
 - Github: [@ronroeandassociates](https://github.com/ronroeandassociates)
 - LinkedIn: [@ronolsen](https://linkedin.com/in/ronolsen)
 
 👤 **Lyndon Pettersson**
 
-- Website: TODO
-- Twitter: [@TODO](https://twitter.com/TODO)
 - Github: [@Lyndonpett](https://github.com/Lyndonpett)
-- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
+- LinkedIn: [@lyndonpettersson](https://linkedin.com/in/lyndonpettersson)
 
 👤 **Tres Serio**
 
-- Website: TODO
-- Twitter: [@TODO](https://twitter.com/TODO)
 - Github: [@tresserio](https://github.com/tresserio)
-- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
+- LinkedIn: [@frank-serio](https://linkedin.com/in/frank-serio)
 
 👤 **Toffer Sokolosky**
 
-- Website: TODO
-- Twitter: [@TODO](https://twitter.com/TODO)
 - Github: [@Estoric918](https://github.com/Estoric918)
-- LinkedIn: [@TODO](https://linkedin.com/in/TODO)
+- LinkedIn: [@tofer-sokolosky](https://linkedin.com/in/tofer-sokolosky)
 
 ## 🤝 Contributing
 
