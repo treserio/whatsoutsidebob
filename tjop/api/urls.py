@@ -15,4 +15,5 @@ urlpatterns = [
     path('colors/', views.colors.as_view()),
     path('subjects/', views.subj_view.as_view()),
     path('all_info/', views.join_table.as_view()),
+    path('register/', views.register),
 ]
