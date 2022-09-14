@@ -1,77 +1,164 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>WOB-Login</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="../css/tailwind.css"> -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../scripts/login-redirect.js"></script>
-  </head>
-  <div class="flex justify-center items-center"  id="loader">
-    <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
-    <span class="visually-hidden">Loading...</span>
-    </div>
-  </div>
-  <body class="bg-slate-900" style="visibility:hidden;">
-    <!-- component -->
-    <div class="grid h-screen place-items-center bg-cover bg-no-repeat bg-center" style="background-image: url(../images/wob-login-bg.png)" >
-    <div class="container font-sans max-w-sm flex flex-col justify-center">
-             <form class="" id="login">
-                <div class="mx-auto max-w-lg">
-                    <input placeholder="Username" type="text" name="username"
-                      class="text-md block px-3 py-2  rounded-lg w-full mt-10
-                    bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
-                  <div class="mb-8" x-data="{ show: true }">
 
-                    <div class="relative">
-                      <input placeholder="Password" :type="show ? 'password' : 'text'" name="password" class="text-md block px-3 py-2 mt-4 rounded-lg w-full
-                        bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md
-                        focus:placeholder-gray-500
-                        focus:bg-white
-                        focus:border-gray-600
-                        focus:outline-none">
-                      <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
-                        <svg class="h-6 text-gray-700" fill="none" @click="show = !show"
-                          :class="{'hidden': !show, 'block':show }" xmlns="http://www.w3.org/2000/svg"
-                          viewbox="0 0 576 512">
-                          <path fill="currentColor"
-                            d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z">
-                          </path>
-                        </svg>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>WOB-Login</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="stylesheet" href="../css/tailwind.css"> -->
+	<link rel="stylesheet" href="../css/curves.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="../scripts/login-redirect.js"></script>
+	<script src="../scripts/loginScript.js"></script>
+</head>
+<div class="flex justify-center items-center" id="loader">
+	<div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
+		<span class="visually-hidden">Loading...</span>
+	</div>
+</div>
 
-                        <svg class="h-6 text-gray-700" fill="none" @click="show = !show"
-                          :class="{'block': !show, 'hidden':show }" xmlns="http://www.w3.org/2000/svg"
-                          viewbox="0 0 640 512">
-                          <path fill="currentColor"
-                            d="M320 400c-75.85 0-137.25-58.71-142.9-133.11L72.2 185.82c-13.79 17.3-26.48 35.59-36.72 55.59a32.35 32.35 0 0 0 0 29.19C89.71 376.41 197.07 448 320 448c26.91 0 52.87-4 77.89-10.46L346 397.39a144.13 144.13 0 0 1-26 2.61zm313.82 58.1l-110.55-85.44a331.25 331.25 0 0 0 81.25-102.07 32.35 32.35 0 0 0 0-29.19C550.29 135.59 442.93 64 320 64a308.15 308.15 0 0 0-147.32 37.7L45.46 3.37A16 16 0 0 0 23 6.18L3.37 31.45A16 16 0 0 0 6.18 53.9l588.36 454.73a16 16 0 0 0 22.46-2.81l19.64-25.27a16 16 0 0 0-2.82-22.45zm-183.72-142l-39.3-30.38A94.75 94.75 0 0 0 416 256a94.76 94.76 0 0 0-121.31-92.21A47.65 47.65 0 0 1 304 192a46.64 46.64 0 0 1-1.54 10l-73.61-56.89A142.31 142.31 0 0 1 320 112a143.92 143.92 0 0 1 144 144c0 21.63-5.29 41.79-13.9 60.11z">
-                          </path>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <button class="mt-24 text-lg font-semibold
-                    bg-gray-800 w-full text-white rounded-lg
-                    px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
-                  >
-                    Login
-                  </button>
-                  <div class="flex justify-between mt-4">
-                    <label class="block text-gray-500 font-bold">
-                      <input type="checkbox" class="leading-loose text-pink-600">
-                        <span class="text-sm text-gray-600 leading-snug"> Remember Me </span>
-                      </label>
-                    <label class="block text-gray-500 font-bold">
-                      <a href="#" class="cursor-pointer tracking-tighter text-black border-b-2 border-gray-200 hover:border-gray-400">
-                        <span>Forgot Password?</span>
-                      </a>
-                    </label>
-                  </div>
-                </div>
-              </form>
-    </div>
-  </div>
+<body class="bg-slate-900">
+
+	<!-- component -->
+	<div class="grid h-screen place-items-center bg-cover bg-no-repeat bg-center"
+		style="background-image: url(../images/afro-login.png)">
+		<div class="container font-sans max-w-md flex flex-col justify-center">
+			<div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 lg:pt-12">
+				<div
+					class="w-full bg-white rounded-lg md:mt-0 sm:max-w-md xl:p-0 bg-lime-900 border-slate-900 bg-opacity-0 relative">
+					<div class="p-6 m-6 space-y-4 md:space-y-6 sm:p-6 sm:m-10 sm:my-4">
+						<h1
+							class="text-xl font-bold leading-tight tracking-tight text-gray-300 md:text-2xl text-center">
+							Log In To Your Account
+						</h1>
+						<form class="space-y-4 md:space-y-6" action="#" id="login">
+							<div>
+								<label for="username"
+									class="block mb-2 text-sm font-medium text-gray-300">Username</label>
+								<input type="username" name="username" id="username"
+									class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-slate-300 border-gray-600 placeholder-gray-900 focus:ring-blue-500 focus:border-blue-500"
+									placeholder="" required="">
+							</div>
+							<div>
+								<label for="password"
+									class="block mb-2 text-sm font-medium text-gray-300">Password</label>
+								<input type="password" name="password" id="password" placeholder="Enter password"
+									class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-slate-300 border-gray-600 placeholder-gray-900 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500"
+									required="">
+							</div>
+							<div class="flex items-center justify-between">
+								<div class="flex items-start">
+									<div class="flex items-center h-5 hidden">
+										<input id="remember" aria-describedby="remember" type="checkbox"
+											class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 bg-gray-700 border-gray-600 focus:ring-primary-600 ring-offset-gray-800">
+									</div>
+									<div class="ml-3 text-sm hidden">
+										<label for="remember" class="text-gray-500 text-gray-400">Remember me</label>
+									</div>
+								</div>
+								<a href="#"
+									class="text-sm font-medium text-primary-600 hover:underline text-lime-400 hidden">Forgot
+									password?</a>
+							</div>
+							<button type="submit"
+								class="w-full text-white bg-orange-600 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-primary-600 hover:bg-primary-700 focus:ring-primary-800">Login</button>
+							<p class="text-sm font-light text-gray-500 text-gray-400 text-center">
+								Don’t have an account yet? <button id="modalOpen"
+									class="font-medium text-primary-600 hover:underline text-lime-400" type="button">
+									Sign Up
+								</button>
+
+							</p>
+						</form>
+					</div>
+					<!-- Main modal -->
+
+				</div>
+			</div>
+		</div>
+		<div id="authentication-modal" tabindex="-1" aria-hidden="true"
+			class="hidden overflow-y-auto scrollbar-hide fixed z-50 w-full h-modal md:h-full animate__animated">
+			<div class="relative w-full max-w-md h-50 centered">
+				<!-- Modal content -->
+				<div class="relative  rounded-lg shadow redBG">
+					<button type="button"
+						class="absolute top-3 right-2.5 text-gray-50 bg-transparent hover:text-gray-600 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center "
+						data-modal-toggle="authentication-modal" id="modalClose">
+						<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd"
+								d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+								clip-rule="evenodd"></path>
+						</svg>
+						<span class="sr-only">Close modal</span>
+					</button>
+					<div class="py-6 px-6 lg:px-8">
+						<h3 class="text-3xl font-bold leading-tight tracking-tight text-gray-300 mb-4 text-center">
+							Create Account
+						</h3>
+						<form class="space-y-6" action="" id="modalForm">
+							<div>
+								<label for="newUsername"
+									class="block mb-2 text-base font-bold text-gray-300">Username</label>
+								<input type="username" name="newUsername" id="newUsername"
+									class="bg-slate-300 border border-gray-300 text-black rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+									placeholder="" required>
+							</div>
+							<div>
+								<label for="firstname" class="block mb-2 text-base font-bold text-gray-300">First
+									name</label>
+								<input type="firstname" name="firstname" id="firstname"
+									class="bg-slate-300 border border-gray-300 text-black rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+									placeholder="" required>
+							</div>
+							<div>
+								<label for="lastname" class="block mb-2 text-base font-bold text-gray-300">Last
+									name</label>
+								<input type="lastname" name="lastname" id="lastname"
+									class="bg-slate-300 border border-gray-300 text-black rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+									placeholder="" required>
+							</div>
+							<div>
+								<label for="email" class="block mb-2 text-base font-bold text-gray-300">Email</label>
+								<input type="email" name="email" id="email"
+									class="bg-slate-300 border border-gray-300 text-black rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 placeholder-gray-500"
+									placeholder="name@company.com" required>
+							</div>
+							<div>
+								<label for="newPassword"
+									class="block mb-2 text-base font-bold text-gray-300">Password</label>
+								<input type="password" name="newPassword" id="newPassword" onkeyup="pwdConfirm()"
+									placeholder="Enter password"
+									class="bg-slate-300 border border-gray-300 text-black rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 placeholder-gray-500"
+									required>
+							</div>
+							<div>
+								<label for="confirm" class="block mb-2 text-base font-bold text-gray-300">Confirm
+									Password</label>
+								<input type="password" name="confirm" id="confirm" onkeyup="pwdConfirm()"
+									placeholder="Confirm password"
+									class="bg-slate-300 border border-gray-300 text-black rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 placeholder-gray-500"
+									required>
+							</div>
+
+							<button type="submit"
+								class="w-full text-white bg-orange-600 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Create
+								Account</button>
+							<div class="text-sm font-medium text-gray-500 dark:text-gray-300 text-center">
+								Already registered? <button id="modalClose2"
+									class="font-medium text-primary-600 hover:underline text-lime-400" type="button">
+									Log In
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
+
 </html>

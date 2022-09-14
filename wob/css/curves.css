@@ -1,10 +1,23 @@
   text {
-    font-weight: 900;
-    font-size: 55px;
-    fill: #101010;
+      font-weight: 900;
+      font-size: 55px;
+      fill: #101010;
   }
-
+  
   .archy {
-    float: left;
-    position: absolute;
-}
+      float: left;
+      position: absolute;
+  }
+  
+  .centered {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+  
+  .redBG {
+      background-image: url(../images/canvas.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+  }

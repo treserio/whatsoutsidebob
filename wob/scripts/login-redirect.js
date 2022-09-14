@@ -63,6 +63,9 @@ function checkLogin(username, password) {
             document.cookie = "Authorization=Token ".concat(json.token, "; SameSite=None; Secure");
             window.location.replace('http://127.0.0.1:5500/wob/templates/app.html');
         }
+        else if (xhr.readyState === 4) {
+            alert('Username or password incorrect');
+        }
     };
     xhr.send(JSON.stringify({ username: username, password: password }));
 }

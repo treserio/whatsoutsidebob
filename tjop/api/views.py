@@ -6,6 +6,9 @@ from rest_framework import filters, permissions, views
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
+from django.views.decorators.csrf import csrf_exempt
+import json
+
 
 
 from .models import Colors, HexValues, PicInfo, Subjects
@@ -335,3 +338,23 @@ class logout(ListAPIView):
             return HttpResponse('Token has been removed')
         except Exception:
             return HttpResponse("Invalid Token, please try again")
+
+@csrf_exempt
+def register(request):
+    from django.contrib.auth.models import User
+
+    if request.method == 'POST':
+        input = json.loads(request.body.decode('utf-8'))
+        try:
+            user = User.objects.create_user(
+            username=input['username'],
+            first_name=input['firstname'],
+            last_name=input['lastname'],
+            email=input['email'],
+            password=input['password'],
+        )
+            return HttpResponse('User has been created')
+        except Exception as e:
+            print('👁👅👁')
+            print(e)
+            return HttpResponse('User already exists', status=409)
