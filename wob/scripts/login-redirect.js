@@ -2,7 +2,7 @@
 // need to check for special chars in auth-token!!! & fix regex if needed
 // document.cookie = "Authorization=Token FAILED"
 // dfcf19a03c33d4e3a5661e61e944c783cc1ad3d4
-var loginAuth = function () {
+var loginAuthCheck = function () {
     // grab our authorization string from the cookie to add to the header
     var authMatch = document.cookie.match(/Authorization=(Token [\w\d]+)/);
     if (!authMatch || !authMatch[1]) {
@@ -34,4 +34,35 @@ var loginAuth = function () {
         }
     });
 };
-loginAuth();
+loginAuthCheck();
+// script on form submit
+setTimeout(function () {
+    var login = document.querySelector('#login');
+    // console.log(login);
+    if (login) {
+        login.onsubmit = function (e) {
+            // console.log(e);
+            if (e && e.target && e.target[0] && e.target[1]) {
+                // console.log(e.target[0].value)
+                // console.log(e.target[1].value)
+                checkLogin(e.target[0].value, e.target[1].value);
+            }
+            return false;
+        };
+    }
+}, 250);
+function checkLogin(username, password) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'http://localhost:8000/api/login/', true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var json = JSON.parse(xhr.responseText);
+            // console.log(json);
+            // console.log(json.token);
+            document.cookie = "Authorization=Token ".concat(json.token, "; SameSite=None; Secure");
+            window.location.replace('http://127.0.0.1:5500/wob/templates/app.html');
+        }
+    };
+    xhr.send(JSON.stringify({ username: username, password: password }));
+}

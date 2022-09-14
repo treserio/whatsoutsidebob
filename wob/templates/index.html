@@ -19,15 +19,15 @@
     <!-- component -->
     <div class="grid h-screen place-items-center bg-cover bg-no-repeat bg-center" style="background-image: url(../images/wob-login-bg.png)" >
     <div class="container font-sans max-w-sm flex flex-col justify-center">
-             <form class="">
+             <form class="" id="login">
                 <div class="mx-auto max-w-lg">
-                    <input placeholder="Username" type="text"
+                    <input placeholder="Username" type="text" name="username"
                       class="text-md block px-3 py-2  rounded-lg w-full mt-10
                     bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none">
                   <div class="mb-8" x-data="{ show: true }">
 
                     <div class="relative">
-                      <input placeholder="Password" :type="show ? 'password' : 'text'" class="text-md block px-3 py-2 mt-4 rounded-lg w-full
+                      <input placeholder="Password" :type="show ? 'password' : 'text'" name="password" class="text-md block px-3 py-2 mt-4 rounded-lg w-full
                         bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md
                         focus:placeholder-gray-500
                         focus:bg-white

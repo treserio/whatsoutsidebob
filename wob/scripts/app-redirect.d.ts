@@ -1,1 +1,1 @@
-declare const appAuth: () => void;
+declare const appAuthCheck: () => void;

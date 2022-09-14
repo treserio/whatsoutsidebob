@@ -2,7 +2,7 @@
 // need to check for special chars in auth-token!!! & fix regex if needed
 // document.cookie = "Authorization=Token Failed"
 // dfcf19a03c33d4e3a5661e61e944c783cc1ad3d4
-var appAuth = function () {
+var appAuthCheck = function () {
     // grab our authorization string from the cookie to add to the header
     var authMatch = document.cookie.match(/Authorization=(Token [\w\d]+)/);
     if (!authMatch || !authMatch[1]) {
@@ -30,4 +30,4 @@ var appAuth = function () {
         }
     });
 };
-appAuth();
+appAuthCheck();
