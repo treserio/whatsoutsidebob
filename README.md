@@ -26,14 +26,24 @@ After finishing an API for the Joy of Painting we decided to make a simple app t
 
 ## Install
 
-`- [clone the repository](https://github.com/treserio/whatsoutsidebob.git) `
-` - cd into the directory`
-`- npm install `
-`- [startDB.sh](../setup/startDB.sh) `
+```
+- [clone the repository](https://github.com/treserio/whatsoutsidebob.git) to your local machine
+ - cd into the directory
+- npm install
+- [startDB.sh](../setup/startDB.sh)
+```
 
 ## Requirements
 
-`. Django 3.2.5 . Python 3.9.6 . Node 14.17.6 . npm 6.14.15 . PostgreSQL 13.4 . Django Rest Framework .python . mysql`
+```
+- Django 3.2.5
+- Python 3.9.6
+- Node 14.17.6
+- npm 6.14.15
+- PostgreSQL 13.4
+- Django Rest Framework
+- mysql
+```
 
 ## Usage
 
