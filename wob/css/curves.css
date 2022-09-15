@@ -3,21 +3,30 @@
       font-size: 55px;
       fill: #101010;
   }
-  
+
   .archy {
       float: left;
       position: absolute;
   }
-  
+
   .centered {
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
   }
-  
+
   .redBG {
       background-image: url(../images/canvas.png);
       background-repeat: no-repeat;
       background-size: cover;
   }
+
+  @font-face {
+    font-family: Personality;
+    src: url("Personalitydemo-EgVj.otf") format("opentype");
+}
+
+.font {
+    font-family: Personality;
+}
