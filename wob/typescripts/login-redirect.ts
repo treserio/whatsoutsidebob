@@ -53,7 +53,7 @@ function checkLogin(username: string, password: string): void {
     const xhr: XMLHttpRequest = new XMLHttpRequest();
     xhr.open('POST', 'http://localhost:8000/api/login/', true);
     xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.onreadystatechange = function () {
+    xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
             let json = JSON.parse(xhr.responseText);
             // console.log(json);

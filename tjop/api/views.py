@@ -204,7 +204,7 @@ class join_table(ListAPIView):
 
 class pic_info(ListAPIView):
     ordering = ['episode_colors__episode']
-    permission_classes = (permissions.IsAuthenticated,)
+    # permission_classes = (permissions.IsAuthenticated,)
     queryset = PicInfo.objects.all()
     serializer_class = PicInfoSeri
     filter_backends = [
@@ -231,7 +231,7 @@ class pic_info(ListAPIView):
         'air_date'
     ]
     search_fields = [
-        'episode_colors',
+        'episode_colors__episode',
         'painting_index',
         'painting_title',
         'season',

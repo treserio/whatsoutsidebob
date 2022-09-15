@@ -31,3 +31,17 @@ var appAuthCheck = function () {
     });
 };
 appAuthCheck();
+window.addEventListener('load', function () {
+    document.getElementById('logoutButton').onclick = function () {
+        console.log('stuff');
+        var authMatch = document.cookie.match(/Authorization=(Token [\w\d]+)/);
+        if (authMatch && authMatch[1]) {
+            var Authorization = authMatch[1];
+            fetch('http://localhost:8000/api/logout/', {
+                headers: { Authorization: Authorization }
+            });
+            document.cookie = "Authorization=Token Failed; expires=Sat, 01 Jan 2022 00:00:01 GMT";
+            window.location.replace('http://127.0.0.1:5500/wob/templates/');
+        }
+    };
+});
