@@ -4,12 +4,12 @@
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-1.9-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
   <a href " "  target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href=" " target="_blank">
-    <img alt="License: none" src="https://img.shields.io/badge/License-none-yellow.svg" />
+    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
   </a>
   <!a href="https://twitter.com/TODO" target="_blank">
     <!img alt="Twitter: TODO" src="https://img.shields.io/twitter/follow/TODO.svg?style=social" />
@@ -36,13 +36,14 @@ After finishing an API for the Joy of Painting we decided to make a simple app t
 ## Requirements
 
 ```
-- Django 3.2.5
-- Python 3.9.6
-- Node 14.17.6
-- npm 6.14.15
-- PostgreSQL 13.4
-- Django Rest Framework
-- mysql
+dependencies:
+"npm": "8.19.1",
+"react": "18.2.0",
+"tailwindcss": "3.1.8",
+"typescript": "4.8.2",
+"webpack": "5.74.0",
+"webpack-cli": "4.10.0",
+"webpack-dev-server": "4.10.1"
 ```
 
 ## Usage
@@ -95,7 +96,7 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2022 [Cohort -15](https://github.com/treserio/whatsoutsidebob.git).<br />
-This project is [none](none) licensed.
+This project is [ISC](isc) licensed.
 
 ---
 
