@@ -54,12 +54,16 @@ const createNewUser = () => {
       xhr.onreadystatechange = function () {
         console.log('👁👅👁');
         if (xhr.status === 200 && xhr.readyState === 4) {
-          console.log(xhr.status);
-          console.log(xhr.responseText);
+	 	  const modal = document.getElementById('authentication-modal');
+		  modal?.classList.toggle('hidden');
+		  document.forms[1].reset();
         } else if (xhr.readyState === 4) {
-          alert(
-            'Username already exists, please login or try another username'
-          );
+			const username: HTMLElement | null = document.getElementById('newUsername');
+			const usernameInUse: HTMLElement | null = document.getElementById('inUse');
+			username?.classList.add('border-4');
+			username?.classList.add('border-red-500');
+			usernameInUse?.classList.remove('hidden');
+
         }
       };
 
@@ -72,9 +76,6 @@ const createNewUser = () => {
       });
 
       xhr.send(data);
-      const modal = document.getElementById('authentication-modal');
-      modal?.classList.toggle('hidden');
-      document.forms[1].reset();
     };
   }
   return false;

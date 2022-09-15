@@ -64,7 +64,10 @@ function checkLogin(username, password) {
             window.location.replace('http://127.0.0.1:5500/wob/templates/app.html');
         }
         else if (xhr.readyState === 4) {
-            alert('Username or password incorrect');
+            // alert('Username or password incorrect');
+            var invalid = document.getElementById('invalid');
+            invalid === null || invalid === void 0 ? void 0 : invalid.classList.remove('hidden');
+            document.forms[0].reset();
         }
     };
     xhr.send(JSON.stringify({ username: username, password: password }));

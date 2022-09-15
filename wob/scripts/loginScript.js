@@ -44,11 +44,16 @@ var createNewUser = function () {
             xhr.onreadystatechange = function () {
                 console.log('👁👅👁');
                 if (xhr.status === 200 && xhr.readyState === 4) {
-                    console.log(xhr.status);
-                    console.log(xhr.responseText);
+                    var modal = document.getElementById('authentication-modal');
+                    modal === null || modal === void 0 ? void 0 : modal.classList.toggle('hidden');
+                    document.forms[1].reset();
                 }
                 else if (xhr.readyState === 4) {
-                    alert('Username already exists, please login or try another username');
+                    var username_1 = document.getElementById('newUsername');
+                    var usernameInUse = document.getElementById('inUse');
+                    username_1 === null || username_1 === void 0 ? void 0 : username_1.classList.add('border-4');
+                    username_1 === null || username_1 === void 0 ? void 0 : username_1.classList.add('border-red-500');
+                    usernameInUse === null || usernameInUse === void 0 ? void 0 : usernameInUse.classList.remove('hidden');
                 }
             };
             var data = JSON.stringify({
@@ -59,9 +64,6 @@ var createNewUser = function () {
                 password: password
             });
             xhr.send(data);
-            var modal = document.getElementById('authentication-modal');
-            modal === null || modal === void 0 ? void 0 : modal.classList.toggle('hidden');
-            document.forms[1].reset();
         };
     }
     return false;
