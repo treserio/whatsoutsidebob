@@ -22,9 +22,9 @@
       background-size: cover;
   }
 
-  @font-face {
+@font-face {
     font-family: Personality;
-    src: url("Personalitydemo-EgVj.otf") format("opentype");
+    src: local('Personality'), url("../fonts/Personalitydemo-EgVj.otf") format("opentype");
 }
 
 .font {
