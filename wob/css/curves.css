@@ -30,3 +30,14 @@
 .font {
     font-family: Personality;
 }
+
+input[type=checkbox] {
+    display: none;
+}
+
+.ddown-menu {
+    position: fixed;
+    display: none;
+    width: 96%;
+    left: 2%;
+}
