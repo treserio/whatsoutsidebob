@@ -47,5 +47,5 @@ input[id^=option-] {
 }
 
 input[id^=option-]:checked ~ label {
-    border: 4px solid rgb(22 163 74);
+    border: 4px solid rgb(22 163 74) !important;
 }

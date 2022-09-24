@@ -78,7 +78,7 @@ class hex_values(ListAPIView):
 
 class join_table(ListAPIView):
     ordering = ['episode_colors__episode']
-    permission_classes = (permissions.IsAuthenticated,)
+    # permission_classes = (permissions.IsAuthenticated,)
     queryset = PicInfo.objects.all()
     serializer_class = JoinTableSeri
     filter_backends = [
