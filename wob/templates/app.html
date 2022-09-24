@@ -9,42 +9,82 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../css/curves.css">
     <!--<script src="../scripts/app-redirect.js"></script>-->
-    <script src="../scripts/app-menu.js"></script>
+    <script src="../scripts/search.js"></script>
     <link rel="shortcut icon" href="../images/wob-login-bg.png" type="image/favicon">
     <title>What's Outside Bob?</title>
 </head>
 
 <body class="bg-slate-800">
-    <header class="flex justify-between items-center mt-2">
+    <header class="
+        flex
+        justify-between
+        items-center
+        mt-2"
+    >
         <!-- Logo -->
-        <a href="#" class="flex mr-2">
-            <img src="../images/wob-login-bg.png" alt="logo" class="w-20 h-10">
-            <span class="font self-center text-3xl text-white whitespace-nowrap">What's Outside Bob?</span>
+        <a href="#" class="
+            flex
+            mr-2"
+        >
+            <img src="../images/wob-login-bg.png" alt="logo"
+                class="
+                    w-20
+                    h-10"
+            >
+            <span class="
+                font
+                self-center
+                text-3xl
+                text-white
+                whitespace-nowrap"
+            >What's Outside Bob?</span>
         </a>
         <!-- Desktop Search Bar -->
-        <div class="hidden w-6/12 lg:w-8/12 sm:flex mx-2">
-            <div class="relative w-full flex">
-                <div class="flex absolute inset-y-0 left-0 items-center pl-1 pointer-events-none">
-                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <div class="
+            hidden
+            w-6/12
+            mx-2
+            sm:flex
+            lg:w-8/12"
+        >
+            <div class="
+                relative
+                w-full"
+            >
+                <div class="
+                    flex
+                    absolute
+                    inset-y-0
+                    left-0
+                    items-center
+                    pl-1
+                    pointer-events-none"
+                >
+                    <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                        class="
+                            w-5
+                            h-5
+                            text-gray-500"
+                    >
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
+                        </path>
                     </svg>
                 </div>
-                <input type="search" id="default-search"
+                <input type="search" id="default-search" placeholder="Search" required
                     class="
                         w-full
                         py-2
                         pl-8
                         text-sm
-                        text-gray-900
-                        bg-gray-50
+                        text-white
+                        bg-gray-700
                         rounded-lg
                         border
-                        border-gray-300
-                        focus:ring-blue-500 focus:border-blue-500
-                        dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Search" required>
+                        border-gray-600
+                        focus:ring-blue-500
+                        focus:border-blue-500"
+                >
                 <button type="submit"
                     class="text-white
                         absolute
@@ -57,96 +97,262 @@
                         py-1
                         bg-blue-700
                         hover:bg-blue-800
-                        focus:ring-4 focus:outline-none focus:ring-blue-300
-                        dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        focus:ring-4
+                        focus:outline-none
+                        focus:ring-blue-300"
                 >Search</button>
             </div>
         </div>
         <!-- Logout -->
-        <button id="logoutButton" type="button" class="
-            relative
-            text-white
-            font-medium
-            rounded-lg
-            px-2
-            mr-2
-            h-9
-            bg-blue-700
-            hover:bg-blue-800
-            focus:ring-4 focus:outline-none focus:ring-blue-300
+        <button id="logoutButton" type="button"
+            class="
+                relative
+                text-white
+                font-medium
+                rounded-lg
+                px-2
+                mr-2
+                h-9
+                bg-blue-700
+                hover:bg-blue-800
+                focus:ring-4 focus:outline-none focus:ring-blue-300
             ">Logout</button>
     </header>
     <!-- Mobile Search Bar -->
-    <div class="w-full flex sm:hidden justify-center mt-3">
-        <div class="relative w-full flex mx-2">
-            <div class="flex absolute inset-y-0 left-0 items-center pl-1 pointer-events-none">
-                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <div class="
+        flex
+        w-full
+        justify-center
+        mt-3
+        sm:hidden"
+    >
+        <div class="
+            flex
+            relative
+            w-full
+            mx-2"
+        >
+            <div class="
+                flex
+                absolute
+                inset-y-0
+                left-0
+                items-center
+                pl-1
+                pointer-events-none"
+            >
+                <svg aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                    class="
+                        w-5
+                        h-5
+                        text-gray-500"
+                >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
+                    </path>
                 </svg>
             </div>
-            <input type="search" id="default-search"
+            <input type="search" id="default-search" placeholder="Search" required
                 class="
                     w-full
                     py-2
                     pl-8
                     text-sm
-                    text-gray-900
-                    bg-gray-50
+                    text-white
+                    bg-gray-700
                     rounded-lg
                     border
-                    border-gray-300
-                    focus:ring-blue-500 focus:border-blue-500
-                    dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Search" required>
-            <button type="submit"
-                class="text-white
-                    absolute
-                    top-1
-                    right-3
-                    font-medium
-                    rounded-lg
-                    text-sm
-                    px-4
-                    py-1
-                    bg-blue-700
-                    hover:bg-blue-800
-                    focus:ring-4 focus:outline-none focus:ring-blue-300
-                    dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    border-gray-600
+                    focus:ring-blue-500
+                    focus:border-blue-500"
+            >
+            <button type="submit" class="
+                text-white
+                absolute
+                top-1
+                right-3
+                rounded-lg
+                font-medium
+                text-sm
+                px-4
+                py-1
+                bg-blue-700
+                hover:bg-blue-800
+                focus:ring-4
+                focus:outline-none
+                focus:ring-blue-300"
             >Search</button>
         </div>
     </div>
     <!-- Filters -->
-    <div class="flex justify-around mt-3">
+    <div class="
+        flex
+        justify-around
+        mt-3"
+    >
         <!-- Colors -->
         <div class="flex-col">
-            <div class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                <input type="checkbox" id="filter_colors" onClick="showColors()">
-                <label class="flex items-center" for="filter_colors">Colors <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-darkreader-inline-stroke=""
-                    style="--darkreader-inline-stroke:currentColor;">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg></label>
+            <div class="
+                inline-flex
+                bg-blue-700
+                rounded-lg
+                items-center
+                text-center
+                font-medium
+                text-white
+                text-sm
+                px-4
+                py-2.5
+                hover:bg-blue-800
+                focus:ring-4
+                focus:outline-none
+                focus:ring-blue-300"
+            >
+                <input type="checkbox" id="filter-colors" onClick="showColors()">
+                <label for="filter-colors"
+                    class="
+                        flex
+                        items-center"
+                >Colors
+                    <svg aria-hidden="true" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-darkreader-inline-stroke=""
+                        style="--darkreader-inline-stroke:currentColor;"
+                        class="
+                            ml-2
+                            w-4
+                            h-4"
+                    >
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </label>
             </div>
-            <!-- hidden menu -->
-            <div class="ddown-menu mt-3 text-white bg-blue-700 font-medium rounded-lg text-sm px-4 py-2.5 text-center items-center" id="list_colors">
-               Colors Filter List
-               Populated with JS
+            <!-- hidden colors menu -->
+            <div id="list-colors"
+                class="
+                    ddown-menu
+                    bg-blue-900
+                    rounded-lg
+                    mt-3
+                    px-2
+                    pb-2
+                    font-semibold
+                    text-white
+                    text-sm"
+                >
+                <fieldset id="append-colors-here"
+                    class="
+                        flex
+                        flex-col
+                        md:flex-row
+                        w-full
+                        border
+                        border-solid
+                        border-white-300
+                        px-2
+                        pb-2"
+                >
+                    <legend class="text-xl">&nbsp;Choose Colors:&nbsp;</legend>
+                    <div class="
+                        flex
+                        justify-around
+                        my-3
+                        md:w-1/2"
+                    >
+                        <div>
+                            <input type="checkbox" name="option-c1" id="option-c1">
+                            <label style="background-color: #FFB800;" for="option-c1"
+                                class="
+                                    rounded-full
+                                    border-4
+                                    border-stone-700
+                                    px-2
+                                    py-1
+                                    whitespace-nowrap"
+                            >Indian Yellow</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="option-c2" id="option-c2">
+                            <label style="background-color: #4E1500;" for="option-c2"
+                                class="
+                                    rounded-full
+                                    border-4
+                                    border-stone-700
+                                    px-2
+                                    py-1
+                                    whitespace-nowrap"
+                            >Alizarin Crimson</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="option-c3" id="option-c3">
+                            <label style="background-color: #DB0000;" for="option-c3"
+                                class="
+                                    rounded-full
+                                    border-4
+                                    border-stone-700
+                                    px-2
+                                    py-1
+                                    whitespace-nowrap"
+                            >Bright Red</label>
+                        </div>
+                    </div>
+                    <div class="
+                        flex
+                        justify-around
+                        md:w-1/2
+                        my-3"
+                    >
+                        <div>
+                            <input type="checkbox" name="option-c4" id="option-c4">
+                            <label style="background-color: #FFEC00;" for="option-c4"
+                                class="
+                                    rounded-full
+                                    border-4
+                                    border-stone-700
+                                    px-2
+                                    py-1
+                                    whitespace-nowrap"
+                            >Cadmium Yellow</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="option-c5" id="option-c5">
+                            <label style="background-color: #102E3C;" for="option-c5"
+                                class="
+                                    rounded-full
+                                    border-4
+                                    border-stone-700
+                                    px-2
+                                    py-1
+                                    whitespace-nowrap"
+                            >Phthalo Green</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="option-c6" id="option-c6">
+                            <label style="background-color: #021E44;" for="option-c6"
+                                class="
+                                    rounded-full
+                                    border-4
+                                    border-stone-700
+                                    px-2
+                                    py-1
+                                    whitespace-nowrap"
+                            >Prussian Blue</label>
+                        </div>
+                    </div>
+                </fieldset>
             </div>
         </div>
         <!-- Subjects -->
         <div class="flex-col">
             <div class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                <input type="checkbox" id="filter_subjects" onClick="showSubjects()">
-                <label class="flex items-center" for="filter_subjects">Subjects <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
+                <input type="checkbox" id="filter-subjects" onClick="showSubjects()">
+                <label class="flex items-center" for="filter-subjects">Subjects <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-darkreader-inline-stroke=""
                     style="--darkreader-inline-stroke:currentColor;">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg></label>
             </div>
             <!-- hidden menu -->
-            <div class="ddown-menu mt-3 text-white bg-blue-700 font-medium rounded-lg text-sm px-4 py-2.5 text-center items-center" id="list_subjects">
+            <div class="ddown-menu mt-3 text-white bg-blue-700 font-medium rounded-lg text-sm px-4 py-2.5 text-center items-center" id="list-subjects">
                 Subjects Filter List
                 Populated with JS
             </div>
@@ -154,15 +360,15 @@
         <!-- Episode / Season selectors -->
         <div class="flex-col">
             <div class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                <input type="checkbox" id="filter_colors" onClick="showColors()">
-                <label class="flex items-center" for="filter_colors">Colors <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
+                <input type="checkbox" id="filter-colors" onClick="showColors()">
+                <label class="flex items-center" for="filter-colors">Colors <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-darkreader-inline-stroke=""
                     style="--darkreader-inline-stroke:currentColor;">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg></label>
             </div>
             <!-- hidden menu -->
-            <div class="ddown-menu mt-3 text-white bg-blue-700 font-medium rounded-lg text-sm px-4 py-2.5 text-center items-center" id="menu_colors">
+            <div class="ddown-menu mt-3 text-white bg-blue-700 font-medium rounded-lg text-sm px-4 py-2.5 text-center items-center" id="menu-colors">
                 put, a lot of, checkboxes here
                 try grid
             </div>

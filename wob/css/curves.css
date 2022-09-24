@@ -31,7 +31,7 @@
     font-family: Personality;
 }
 
-input[type=checkbox] {
+input[id^=filter-] {
     display: none;
 }
 
@@ -40,4 +40,12 @@ input[type=checkbox] {
     display: none;
     width: 96%;
     left: 2%;
+}
+
+input[id^=option-] {
+    display: none;
+}
+
+input[id^=option-]:checked ~ label {
+    border: 4px solid rgb(22 163 74);
 }
